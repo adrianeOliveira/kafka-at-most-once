@@ -1,20 +1,19 @@
 package br.com.adriane.kafka.atmostonce;
 
-import br.com.adriane.kafka.atmostonce.producer.Producer;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Controller {
 
-    private final Producer producer;
+    private final ClientProducer clientProducer;
 
-    public Controller(Producer producer) {
-        this.producer = producer;
+    public Controller(ClientProducer clientProducer) {
+        this.clientProducer = clientProducer;
     }
 
     @GetMapping
-    public void sendMessage() {
-        producer.send("Test");
+    public void sendMessage() throws InterruptedException {
+        clientProducer.send("Test");
     }
 }
