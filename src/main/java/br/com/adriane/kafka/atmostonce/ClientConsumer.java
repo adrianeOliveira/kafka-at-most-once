@@ -14,10 +14,11 @@ public class ClientConsumer {
     private static final Logger log = LoggerFactory.getLogger(Consumer.class);
 
     @KafkaListener(topics = "at.most.once.topic")
-    public void listen(ConsumerRecord<String, String> consumerRecord,
-                       Acknowledgment acknowledgment) throws InterruptedException {
+    public void listener(ConsumerRecord<String, String> consumerRecord,
+                       Acknowledgment acknowledgment) {
         acknowledgment.acknowledge();
         String message = consumerRecord.value();
-        log.info("Message consumed={}, offset={}",message, consumerRecord.offset());
+        log.info("Message consumed={}, partition={}, offset={}",message, consumerRecord.partition(), consumerRecord.offset());
     }
+
 }
