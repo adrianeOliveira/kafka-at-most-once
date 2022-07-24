@@ -1,6 +1,6 @@
 spring:
   kafka:
-    client-id: at-least-once-app
+    client-id: at-most-once-app
 
     consumer:
       auto-offset-reset: earliest
