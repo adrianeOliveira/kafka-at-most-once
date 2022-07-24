@@ -3,6 +3,13 @@ spring:
     client-id: at-most-once-app
 
     consumer:
+      enable:
+        auto:
+          commit: true
+      auto:
+        commit:
+          interval:
+            ms: 5
       auto-offset-reset: earliest
       group-id: at-least-once-group
 
