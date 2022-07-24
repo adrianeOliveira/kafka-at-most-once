@@ -1,0 +1,17 @@
+package br.com.adriane.kafka.atmostonce.consumer;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Consumer {
+
+    private static final Logger log = LoggerFactory.getLogger(Consumer.class);
+
+    @KafkaListener(topics = "at.most.once.topic")
+    public void listen(String message) {
+        log.info("Message consumed={}",message);
+    }
+}
