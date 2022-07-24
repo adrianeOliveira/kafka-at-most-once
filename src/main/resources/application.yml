@@ -4,14 +4,6 @@ spring:
 
     consumer:
       bootstrap-servers: localhost:9092
-      enable:
-        auto:
-          commit: true
-      auto:
-        commit:
-          interval:
-            ms: 5
-      auto-offset-reset: earliest
       group-id: at-most-once-group
 
     producer:

@@ -12,7 +12,6 @@ public class Consumer {
 
     @KafkaListener(topics = "at.most.once.topic")
     public void listen(String message) throws InterruptedException {
-        Thread.sleep(20);
-        log.info("Message consumed={}",message);
+        log.info("Message received={}",message);
     }
 }
