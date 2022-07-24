@@ -1,6 +1,5 @@
 package br.com.adriane.kafka.atmostonce;
 
-import br.com.adriane.kafka.atmostonce.producer.Producer;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

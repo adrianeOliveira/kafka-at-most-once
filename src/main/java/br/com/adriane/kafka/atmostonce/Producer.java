@@ -1,4 +1,4 @@
-package br.com.adriane.kafka.atmostonce.producer;
+package br.com.adriane.kafka.atmostonce;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
