@@ -16,7 +16,7 @@ public class Producer {
     }
 
     public void send(String message){
-        log.info("Message sent: {}", message);
+        log.info("Message sent={}", message);
         kafkaTemplate.send("at.most.once.topic", message);
     }
 

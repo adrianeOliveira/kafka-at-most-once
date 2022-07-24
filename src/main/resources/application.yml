@@ -1,17 +1,14 @@
 spring:
   kafka:
     client-id: at-most-once-app
-
+    listener:
+      ack-mode: manual
     consumer:
       bootstrap-servers: localhost:9092
       enable:
         auto:
-          commit: true
-      auto:
-        commit:
-          interval:
-            ms: 5
-      auto-offset-reset: earliest
+          commit: false
+      auto-offset-reset: latest
       group-id: at-most-once-group
 
     producer:
